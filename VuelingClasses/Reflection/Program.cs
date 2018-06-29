@@ -12,7 +12,8 @@ namespace VuelingClasses
             Console.WriteLine("Introduce a name for a customer.");
             string nameCostumer = Console.ReadLine();
 
-            Assembly assembly = typeof(Program).Assembly;//cualuier clase de la asembly me dará la asembly, ya está en la ram
+            Assembly assembly = typeof(Program).Assembly;
+            //cualquier clase de la asembly me dará la asembly, ya está en la ram
             //type es la representacion de los objetos, el asembly esta en memoria
             //la 1era vez k se instancia la clase, 1ero se crea la clase para la instanciación
             //a partir de la 2da vez se crea en la RAM
@@ -28,15 +29,18 @@ namespace VuelingClasses
             {
                 //customer = (Customer)Activator.CreateInstance(typeof(Customer));
                 Customer customerObject = (Customer)Activator.CreateInstance(customerType, nameCostumer);//ahora los datos parametrizados estan en la ram
-                Console.WriteLine(((Customer)customerObject).Name);
-                nameCostumer = Console.ReadLine();
+                Console.WriteLine("The customer name is: "+(customerObject).Name);
             }
             catch (Exception e)
             {
                 Console.WriteLine("It hasn't been possible to create it.");
                 Console.WriteLine(e.Message);
-                nameCostumer = Console.ReadLine();
             }
         }
+        /* Automapper
+         * 1. contruir common roperties del total datos (id, name,..) en una clase, y tantas clases como sea posible, poniendo un campo de mas
+         * mirar elGuayaba
+         * en ambos objetos con fecha de nacimiento, y en el otro que calcule la edad
+         */
     }
 }
