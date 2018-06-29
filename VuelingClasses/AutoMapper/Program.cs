@@ -26,11 +26,10 @@ namespace VuelingClasses.AutoMapper
 
             var destination = iMapper.Map<Origin, Destination>(originObject);
 
-
             Console.WriteLine(destination.GetType());
-            Console.WriteLine("Data Destination Object copied from Origin Object:\\nName: "
-                + destination.FName + "\\n Surnames: " + destination.LName + "\\n Birthday: " 
-                + destination.BDestination + "\\n Age: "+ destination.Years);
+            Console.WriteLine("Data Destination Object copied from Origin Object:\nName: "
+                + destination.FName + "\n Surnames: " + destination.LName + "\n Birthday: " 
+                + destination.BDestination + "\n Age: "+ destination.Years);
             Console.ReadLine();
         }
     }

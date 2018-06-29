@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using System.Reflection;
 
 namespace VuelingClasses
@@ -37,10 +38,5 @@ namespace VuelingClasses
                 Console.WriteLine(e.Message);
             }
         }
-        /* Automapper
-         * 1. contruir common roperties del total datos (id, name,..) en una clase, y tantas clases como sea posible, poniendo un campo de mas
-         * mirar elGuayaba
-         * en ambos objetos con fecha de nacimiento, y en el otro que calcule la edad
-         */
     }
 }
