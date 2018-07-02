@@ -15,15 +15,15 @@ namespace VuelingClasses
             //string nameCostumer = Console.ReadLine();
 
             Assembly assembly = typeof(ReflectionXML).Assembly;
-            Type customerType = assembly.GetType("VuelingClasses.Customer");
+
             try
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Customer));
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(CustomerXml));
                 StreamReader sr = new StreamReader(@"C:\Users\G1\source\repos\VuelingClasses\VuelingClasses\XMLFile1.xml");
                 CustomerXml customer = (CustomerXml)xmlSerializer.Deserialize(sr);
                 //Console.WriteLine("Customer information: \nID: " + customer.IdCustomer + "\nCustomer Name"
                 //    + customer.Name);
-
+                Type customerType = assembly.GetType("VuelingClasses.CustomerXml");
                 var customerObject = Activator.CreateInstance(customerType, customer.IdCustomer, customer.Name);//ahora los datos parametrizados estan en la ram
                 Console.WriteLine("Customer information: \nID: " + customer.IdCustomer + "\nCustomer name: " + customer.Name);
             }
@@ -41,7 +41,7 @@ namespace VuelingClasses
                     IdCustomer = "C1",
                     Name = "Albert"
                 };
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Customer));
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(CustomerXml));
                 StreamWriter sw = new StreamWriter(@".\CustomerXml.xml");
                 xmlSerializer.Serialize(sw, customer);
                 sw.Close();
