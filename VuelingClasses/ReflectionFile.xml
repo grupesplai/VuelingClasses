@@ -1,7 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <Customers>
-  <Customer id="lalalaa">VuelingClasses.Reflection.ReflectionXmlXpath
-    <!--<Name>LLuis</Name>
-    <LastName>Jule</LastName>-->
+  <Customer position="estudiante">VuelingClasses.Reflection.ReflectionXmlXpath
+    <Name>LLuis1</Name>
+    <LastName>Jule1</LastName>
+    <Birthday>12-12-11</Birthday>
+  </Customer>
+  <Customer position="trabajador">
+    VuelingClasses.Reflection.ReflectionXmlXpath
+    <Name>LLuis2</Name>
+    <LastName>Jule2</LastName>
+    <Birthday>12-12-11</Birthday>
+  </Customer>
+  <Customer position="estudiante">
+    VuelingClasses.Reflection.ReflectionXmlXpath
+    <Name>LLuis3</Name>
+    <LastName>Jule3</LastName>
+    <Birthday>12-12-11</Birthday>
   </Customer>
 </Customers>
