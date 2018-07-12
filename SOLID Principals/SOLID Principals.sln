@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLID Principals", "SOLID Principals\SOLID Principals.csproj", "{678A8822-2043-44E6-A28A-90BBE047C59A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NO SOLID Principals", "NO SOLID Principals\NO SOLID Principals.csproj", "{0528195B-A136-4F5F-A3F0-29A3EAD3FE44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{678A8822-2043-44E6-A28A-90BBE047C59A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{678A8822-2043-44E6-A28A-90BBE047C59A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{678A8822-2043-44E6-A28A-90BBE047C59A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0528195B-A136-4F5F-A3F0-29A3EAD3FE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0528195B-A136-4F5F-A3F0-29A3EAD3FE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0528195B-A136-4F5F-A3F0-29A3EAD3FE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0528195B-A136-4F5F-A3F0-29A3EAD3FE44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

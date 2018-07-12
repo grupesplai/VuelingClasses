@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SOLID_Principals
+namespace NO_SOLID_Principals
 {
-    class Program
+    class NO_SOLID_SingleResponsability
     {
         static void Main(string[] args)
         {
-            Program user = new Program();
+            NO_SOLID_SingleResponsability user = new NO_SOLID_SingleResponsability();
             string userMoney = user.PayMyDebts(150);
-            Console.WriteLine("Info about user in his/her bank: "+ userMoney):
+            Console.WriteLine("Info about user in his/her bank: " + userMoney);
         }
         public string PayMyDebts(int money)
         {
@@ -28,7 +28,7 @@ namespace SOLID_Principals
 
         public bool HasMoneyAtBank(int money)
         {
-            if (money >0)
+            if (money > 0)
             {
                 return true;
             }

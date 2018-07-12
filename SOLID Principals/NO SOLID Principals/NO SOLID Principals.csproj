@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{678A8822-2043-44E6-A28A-90BBE047C59A}</ProjectGuid>
+    <ProjectGuid>{0528195B-A136-4F5F-A3F0-29A3EAD3FE44}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SOLID_Principals</RootNamespace>
-    <AssemblyName>SOLID Principals</AssemblyName>
+    <RootNamespace>NO_SOLID_Principals</RootNamespace>
+    <AssemblyName>NO SOLID Principals</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,11 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SOLID_Dependency_Injection.cs" />
-    <Compile Include="SOLID_InterfaceSegregation.cs" />
-    <Compile Include="SOLID_Liskov_Substitucion.cs" />
-    <Compile Include="SOLID_OpenCLose.cs" />
-    <Compile Include="SOLID_SingleResponsability.cs" />
+    <Compile Include="NO_SOLID_IndependenceInjection.cs" />
+    <Compile Include="NO_SOLID_InterfaceSegregation.cs" />
+    <Compile Include="NO_SOLID_Liskov_Substitucion.cs" />
+    <Compile Include="NO_SOLID_OpenCLose.cs" />
+    <Compile Include="NO_SOLID_SingleResponsability.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
