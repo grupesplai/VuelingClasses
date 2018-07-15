@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cobalco", "Cobalco\Cobalco.csproj", "{568E6900-7EE7-446C-A693-D388026C3CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cobalco.Tests", "Cobalco.Tests\Cobalco.Tests.csproj", "{4670CF66-51C2-4465-8DD1-9B3241BC67CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{568E6900-7EE7-446C-A693-D388026C3CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568E6900-7EE7-446C-A693-D388026C3CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568E6900-7EE7-446C-A693-D388026C3CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568E6900-7EE7-446C-A693-D388026C3CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4670CF66-51C2-4465-8DD1-9B3241BC67CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4670CF66-51C2-4465-8DD1-9B3241BC67CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4670CF66-51C2-4465-8DD1-9B3241BC67CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4670CF66-51C2-4465-8DD1-9B3241BC67CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {810BAA03-299D-406F-A540-094E8F907FA1}
+	EndGlobalSection
+EndGlobal
