@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -72,7 +74,23 @@ namespace CobalcoWebApiClient
             }
             return message;
         }
-
-        
+        public static string Delete(int id)
+        {
+            string message ="no";
+            try
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = client.DeleteAsync("api/AlumnoAPI/" + id).Result;
+                if( response.IsSuccessStatusCode)
+                    message = "Se ha eliminado correctamente.";
+                else
+                    message = "Ha ocurrido un problema. ";
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            return message;
+        }
     }
 }

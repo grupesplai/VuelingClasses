@@ -28,6 +28,7 @@ namespace CobalcoWebApiClient
         {
             //this.Hide();
             Form2 frm = new Form2();
+            bool asd = HttpApiController.Delete(2);
             frm.Show();
         }
     }
