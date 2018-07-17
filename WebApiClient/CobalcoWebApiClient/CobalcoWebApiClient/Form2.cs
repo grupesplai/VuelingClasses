@@ -18,8 +18,8 @@ namespace CobalcoWebApiClient
         {
             AlumnoModel alumno = new AlumnoModel(textBox1.Text, textBox2.Text, textBox3.Text);
 
-            string message = HttpApiController.AddAlumno(alumno);
-            label4.Text = message;
+            string message = HttpApiController.AddAlumno(alumno).Result;
+            //label4.Text = message;
         }
     }
 }
