@@ -14,7 +14,8 @@ namespace CobalcoWebApiClient
     {
         static HttpClient client;
 
-        static HttpApiController() {
+        static HttpApiController()
+        {
             client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:7214/");
         }
@@ -66,9 +67,9 @@ namespace CobalcoWebApiClient
                 await client.SendAsync(request);
                 message = "Se ha guardado correctamente.";
             }
-            catch(HttpRequestException e) 
+            catch (HttpRequestException e)
             {
-                message = "Ha ocurrido un problema. "+ e;
+                message = "Ha ocurrido un problema. " + e;
                 throw e;
             }
             return message;
@@ -93,22 +94,29 @@ namespace CobalcoWebApiClient
         }
         //https://www.c-sharpcorner.com/article/crud-Asp-Net-web-api-with-entity-framework-in-Asp-Net-mvc/
 
-        public static AlumnoModel find(int id)
+        public static async Task<AlumnoModel> FindAsync(int id)
         {
             try
             {
-                var myInstance = JsonConvert.DeserializeObject<MyClass>(
-                                await response.Content.ReadAsStringAsync());
+                AlumnoModel findedObject = null;
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("api/AlumnoAPI" + id).Result;
+                HttpResponseMessage response = await client.GetAsync("api/AlumnoAPI/" + id);
 
                 if (response.IsSuccessStatusCode)
-                    return response.Content.ReadAsAsync<AlumnoModel>().Result;
-                return null;
+                {
+                    findedObject = JsonConvert.DeserializeObject<AlumnoModel>(
+                             await response.Content.ReadAsStringAsync());
+                    return findedObject;
+                }
+                else
+                {
+                    return findedObject;
+                }
             }
-            catch
+            catch(Exception e)
             {
-                return null;
+                throw e;
             }
         }
+    }
 }

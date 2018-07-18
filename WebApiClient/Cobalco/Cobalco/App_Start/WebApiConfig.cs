@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using Cobalco.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -19,6 +21,17 @@ namespace Cobalco
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //ejercicio automapper
+            //For each Profile, include that profile in the MapperConfiguration
+            var configMapper = new MapperConfiguration(c =>
+            {
+                c.AddProfile(new AlumnoControllerAutomapper());
+            });
+            //Create a mapper that will be used by the DI container
+            var mapper = configMapper.CreateMapper();
+            //Register the DI interfaces with their implementation
+            //falta registrar...
         }
     }
 }
