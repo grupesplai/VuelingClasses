@@ -1,4 +1,5 @@
 ﻿using MVC.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,12 +22,15 @@ namespace MVC.Controllers
             IEnumerable<MvcAlumnoModel> AlumList;
             HttpResponseMessage response = GlobalVariables.client.GetAsync("Alumno").Result;
             AlumList = response.Content.ReadAsAsync<IEnumerable<MvcAlumnoModel>>().Result;
+            MvcAlumnoModel mvc = new MvcAlumnoModel() { Id = 6, Name = "ALbert", LastName = "Basag", Dni = "af323423" };
 
-
-
+            FileManager.Usings.GetJson(AlumList.ToList());
 
             return View(AlumList);
+
         }
+
+
 
         public ActionResult AddOrEdit(int id = 0)
         {
