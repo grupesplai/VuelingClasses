@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FC6EEA1-3F67-4ACC-BA72-CEDBAE06ED27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vueling.Aplication.Services</RootNamespace>
+    <AssemblyName>Vueling.Aplication.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlumnoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vueling.Aplication.DTO\Vueling.Aplication.DTO.csproj">
+      <Project>{f1862870-1535-4b7b-b2e3-508080f439b7}</Project>
+      <Name>Vueling.Aplication.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Aplication.Services.Contrats\Vueling.Aplication.Services.Contrats.csproj">
+      <Project>{3a8fbe27-cc69-4e62-8fd9-7d1701085b16}</Project>
+      <Name>Vueling.Aplication.Services.Contrats</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Common.Layer\Vueling.Common.Layer.csproj">
+      <Project>{08b54d5a-b5c6-493e-a951-9cb70625c9f6}</Project>
+      <Name>Vueling.Common.Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Domain.Entities\Vueling.Domain.Entities.csproj">
+      <Project>{ba9bce55-8bd3-433d-aec7-fac2449f2cbb}</Project>
+      <Name>Vueling.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Infrastructure.Repository.Contacts\Vueling.Infrastructure.Repository.Contracts.csproj">
+      <Project>{f833b159-c3ea-42a1-8113-a47ee0aa5c4b}</Project>
+      <Name>Vueling.Infrastructure.Repository.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Infrastructure.Repository\Vueling.Infrastructure.Repository.csproj">
+      <Project>{d945722f-f523-49ba-954e-78c1452b8184}</Project>
+      <Name>Vueling.Infrastructure.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
