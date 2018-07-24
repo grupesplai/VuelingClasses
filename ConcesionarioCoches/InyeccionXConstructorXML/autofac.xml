@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<autofac defaultAssembly="Concesionario"><!--nombre del ensamblado-->
+  <components name="0">
+    <type>Concesionario.BMWAutoService</type>
+    <injectProperties>true</injectProperties>
+    <instanceScope>singleinstance</instanceScope>
+  </components>
+  <components name="1">
+    <type>Concesionario.FordAutoService</type>
+    <!--<services name="0" type="Model.IJournalPagePrinter" />-->
+    <injectProperties>true</injectProperties>
+    <instanceScope>singleinstance</instanceScope>
+  </components>
+  <components name="2">
+    <type>Concesionario.HondaAutoService</type>
+    <injectProperties>true</injectProperties>
+    <instanceScope>singleinstance</instanceScope>
+  </components>
+</autofac>
