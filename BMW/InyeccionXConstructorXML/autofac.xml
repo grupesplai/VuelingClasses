@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<autofac defaultAssembly="BMWSevices">
+  <components name="0">
+    <type>BMWServices.BMWAutoService</type>
+    <injectProperties>true</injectProperties>
+    <instanceScope>singleinstance</instanceScope>
+  </components>
+  <components name="1">
+    <type>BMWServices.FordAutoService</type>
+    <!--<services name="0" type="Model.IJournalPagePrinter" />-->
+    <injectProperties>true</injectProperties>
+    <instanceScope>singleinstance</instanceScope>
+  </components>
+  <components name="2">
+    <type>BMWServices.HondaAutoService</type>
+    <injectProperties>true</injectProperties>
+    <instanceScope>singleinstance</instanceScope>
+  </components>
+</autofac>
