@@ -68,7 +68,7 @@ namespace Student.Business.Logic
             }
         }
 
-        public Alumno UpdateOneS(Alumno alumno)
+        public bool UpdateOneS(Alumno alumno)
         {
             try
             {

@@ -9,6 +9,6 @@ namespace Student.Business.Logic
         Alumno GetOneS(int id);
         bool DeleteOneS(int id);
         List<Alumno> GetAllS();
-        Alumno UpdateOneS(Alumno alumno);
+        bool UpdateOneS(Alumno alumno);
     }
 }

@@ -52,9 +52,6 @@ namespace Student.DataAcces.Dao
 
                         // Obtener el ultimo identificador insertado.
                         return Convert.ToInt32(_cmd.ExecuteScalar());
-
-                        // var id = Convert.ToInt32(_cmd.ExecuteScalar());
-                        // return SelectById(id);
                     }
                 }
             }
@@ -186,6 +183,44 @@ namespace Student.DataAcces.Dao
                             return alumnoList.ToList();
 
                         }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                log.Error(ex);
+                throw ex;
+            }
+            catch (InvalidOperationException ex)
+            {
+                log.Error(ex);
+                throw ex;
+            }
+        }
+
+        public bool UpdateOneR(Alumno alumno)
+        {
+            try
+            {
+                var sql = "UPDATE dbo.Alumnos SET Nombre = @Nombre, Apellidos =@Apellidos, Dni=@Dni, Registro=@Registro, Nacimiento=@Nacimiento, Edad=@Edad WHERE Id =@Id";
+
+                using (SqlConnection _conn = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand _cmd = new SqlCommand(sql, _conn))
+                    {
+                        _conn.Open();
+                        _cmd.Parameters.AddWithValue("@Nombre", alumno.Nombre.ToString());
+                        _cmd.Parameters.AddWithValue("@Apellidos", alumno.Apellidos.ToString());
+                        _cmd.Parameters.AddWithValue("@Dni", alumno.Dni.ToString());
+                        _cmd.Parameters.AddWithValue("@Registro",alumno.Registro.ToString());
+                        _cmd.Parameters.AddWithValue("@Nacimiento", alumno.Nacimiento.ToString());
+                        _cmd.Parameters.AddWithValue("@Edad", alumno.Edad.ToString());
+                        _cmd.Parameters.AddWithValue("@Id", alumno.Id);
+
+                        //_cmd.ExecuteNonQuery();
+                        _conn.Close();
+
+                        return true;
                     }
                 }
             }

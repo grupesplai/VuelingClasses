@@ -48,22 +48,9 @@ namespace Student.Business.Facade.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if (!id.Equals(alumno.Id))
-            {
-                return BadRequest();
-            }
+            
                         Alumno alumnoFoun = studentBl.GetOneS(id);
-                        alumno = studentBl.UpdateOneS(alumnoFoun);
-                        if (alumno == null)
-                        {
-                            return NotFound();
-                        }
-                        else
-                        {
-                            return StatusCode(HttpStatusCode.NoContent);
-                        }
-            
-            
+                        return Ok(studentBl.UpdateOneS(alumnoFoun));
         }
 
         // DELETE: api/Alumno/5
