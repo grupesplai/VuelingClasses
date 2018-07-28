@@ -1,4 +1,6 @@
-﻿using Student.Business.Logic;
+﻿using Autofac;
+using Autofac.Integration.WebApi;
+using Student.Business.Logic;
 using Student.Common.Logic;
 using System;
 using System.Collections.Generic;
