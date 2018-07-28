@@ -8,6 +8,7 @@ namespace Student.DataAcces.Dao
         int AddAlumno(Alumno alumno);
         bool DeleteOneR(int id);
         Alumno GetOneR(int id);
-        IEnumerable<Alumno> GetAllR();
+        List<Alumno> GetAllR();
+        Alumno UpdateOneR(Alumno alumno);
     }
 }

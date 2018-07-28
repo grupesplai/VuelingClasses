@@ -59,7 +59,21 @@ namespace Student.Business.Logic
             try
             {
                 Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
-                return repository.GetAllR().ToList();
+                return repository.GetAllR();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                throw ex;
+            }
+        }
+
+        public Alumno UpdateOneS(Alumno alumno)
+        {
+            try
+            {
+                Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                return repository.UpdateOneR(alumno);
             }
             catch (Exception ex)
             {

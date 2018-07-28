@@ -42,8 +42,28 @@ namespace Student.Business.Facade.Controllers
         }
 
         // PUT: api/Alumno/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put(int id, Alumno alumno)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (!id.Equals(alumno.Id))
+            {
+                return BadRequest();
+            }
+                        Alumno alumnoFoun = studentBl.GetOneS(id);
+                        alumno = studentBl.UpdateOneS(alumnoFoun);
+                        if (alumno == null)
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            return StatusCode(HttpStatusCode.NoContent);
+                        }
+            
+            
         }
 
         // DELETE: api/Alumno/5

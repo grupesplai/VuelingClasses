@@ -147,41 +147,44 @@ namespace Student.DataAcces.Dao
             }
         }
 
-        public IEnumerable<Alumno> GetAllR()
+        public List<Alumno> GetAllR()
         {
             try
             {
-                var sql = "SELECT Id, Guid, Dni, Nombre, Apellidos, Edad, Nacimiento, Registro FROM dbo.Alumnos";
+                var sql = "SELECT * FROM dbo.Alumnos";
 
                 using (SqlConnection _conn = new SqlConnection(connectionString))
                 {
                     using (SqlCommand _cmd = new SqlCommand(sql, _conn))
                     {
-                        IEnumerable<Alumno> alumnoList = null;
+                        List<Alumno> alumnoList = new List<Alumno>();
                         _conn.Open();
 
                         using (SqlDataReader oReader = _cmd.ExecuteReader())
                         {
+                            
                             if (oReader.HasRows)
-                            { 
-                            while (oReader.Read())
                             {
-                                alumnoList = alumnoList.Concat(
-                                    new[] { new Alumno(
-                                        Convert.ToInt32(oReader.GetValue(0)),
-                                        new Guid(oReader.GetValue(1).ToString()),
-                                        oReader.GetValue(2).ToString(),
-                                        oReader.GetValue(3).ToString(),
-                                        oReader.GetValue(4).ToString(),
-                                        Convert.ToInt32(oReader.GetValue(5)),
-                                        Convert.ToDateTime(oReader.GetValue(6)),
-                                        Convert.ToDateTime(oReader.GetValue(7))
-                                        )
-                                   });
+                                
+                                while (oReader.Read())
+                            {
+                                    Alumno alumno = new Alumno(
+                                        Convert.ToInt32(oReader["Id"]),
+                                        new Guid(oReader["Guid"].ToString()),
+                                        oReader["Nombre"].ToString(),
+                                        oReader["Apellidos"].ToString(),
+                                        oReader["Dni"].ToString(),
+                                        Convert.ToInt32(oReader["Edad"]),
+                                        Convert.ToDateTime(oReader["Nacimiento"]),
+                                        Convert.ToDateTime(oReader["Registro"]));
+
+                                    alumnoList.Add(alumno);
+                                }
+                                
                             }
-                        }
                             _conn.Close();
-                            return alumnoList.AsEnumerable();
+                            return alumnoList.ToList();
+
                         }
                     }
                 }
