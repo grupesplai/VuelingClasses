@@ -19,7 +19,7 @@ namespace Student.DataAcces.Dao
         public RepositoryStudent(ILogger log)
         {
             this.log = log;
-            connectionString = "Data Source=P-0314;Initial Catalog=VuelingApiD;Integrated Security=true;";
+            connectionString = "Data Source=.;Initial Catalog=VuelingApiD;Integrated Security=true;";
         }
         #endregion
 

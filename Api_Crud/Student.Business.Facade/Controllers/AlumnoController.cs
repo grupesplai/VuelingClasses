@@ -20,6 +20,14 @@ namespace Student.Business.Facade.Controllers
             this.studentBl = business;
         }
 
+        // GET: api/Alumno/GetAll
+        [HttpGet()]
+        public IHttpActionResult GetAll()
+        {
+            Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return Ok();
+        }
+
 
 
 
@@ -36,8 +44,10 @@ namespace Student.Business.Facade.Controllers
         }
 
         // POST: api/Alumno
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post(Alumno alumno)
         {
+            Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return Ok(studentBl.AddAlumno(alumno));
         }
 
         // PUT: api/Alumno/5
