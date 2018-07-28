@@ -20,27 +20,18 @@ namespace Student.Business.Facade.Controllers
             this.studentBl = business;
         }
 
-        // GET: api/Alumno/GetAll
-        [HttpGet()]
-        public IHttpActionResult GetAll()
-        {
-            Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            return Ok();
-        }
-
-
 
 
         // GET: api/Alumno
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(studentBl.GetAllS());
         }
 
         // GET: api/Alumno/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            return Ok(studentBl.GetOneS(id));
         }
 
         // POST: api/Alumno
@@ -56,8 +47,9 @@ namespace Student.Business.Facade.Controllers
         }
 
         // DELETE: api/Alumno/5
-        public void Delete(int id)
-        {
+        public IHttpActionResult Delete(int id)
+        {   
+            return Ok(studentBl.DeleteOneS(id));
         }
     }
 }

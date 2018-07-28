@@ -33,5 +33,39 @@ namespace Student.Business.Logic
                 throw ex;
             }
         }
+        public Alumno GetOneS(int id)
+        {
+            Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return repository.GetOneR(id);
+        }
+
+
+        public bool DeleteOneS(int id)
+        {
+            try
+            {
+                Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                return repository.DeleteOneR(id);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<Alumno> GetAllS()
+        {
+            try
+            {
+                Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                return repository.GetAllR().ToList();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

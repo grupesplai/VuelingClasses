@@ -21,7 +21,7 @@ namespace Student.Common.Logic
         #region Constructores
         public Alumno() { }
 
-        public Alumno(Guid guid, int id, string dni, string nombre, string apellidos, int edad, DateTime nacimiento, DateTime registro)
+        public Alumno(int id, Guid guid, string dni, string nombre, string apellidos, int edad, DateTime nacimiento, DateTime registro)
         {
             Guid = guid;
             Id = id;
