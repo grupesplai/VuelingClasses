@@ -8,7 +8,7 @@ using log4net;
 
 namespace Student.Common.Logic
 {
-    class Log4netAdapter : ILogger
+    public class Log4netAdapter : ILogger
     {
         private readonly ILog log;
 
