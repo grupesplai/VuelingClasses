@@ -23,18 +23,22 @@ namespace Student.Business.Facade.Controllers
 
 
         // GET: api/Alumno
+        [HttpGet]
         public IHttpActionResult Get()
         {
+            Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return Ok(studentBl.GetAllS());
         }
 
         // GET: api/Alumno/5
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             return Ok(studentBl.GetOneS(id));
         }
 
         // POST: api/Alumno
+        [HttpPost]
         public IHttpActionResult Post(Alumno alumno)
         {
             Log.Debug("" + System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -42,6 +46,7 @@ namespace Student.Business.Facade.Controllers
         }
 
         // PUT: api/Alumno/5
+        [HttpPut]
         public IHttpActionResult Put(int id, Alumno alumno)
         {
             if (!ModelState.IsValid)
@@ -54,6 +59,7 @@ namespace Student.Business.Facade.Controllers
         }
 
         // DELETE: api/Alumno/5
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {   
             return Ok(studentBl.DeleteOneS(id));

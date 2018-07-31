@@ -9,7 +9,6 @@ namespace Student.Business.Logic
         protected override void Load(ContainerBuilder builder)
         {
             builder
-                //.RegisterType<StudentDao>()
                 .RegisterType<RepositoryStudent>()
                 .As<IRepository>()
                 .InstancePerRequest();

@@ -60,6 +60,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="SQL\CreateTableAlumno.sql" />
+    <Content Include="SQL\StoreProcedures.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

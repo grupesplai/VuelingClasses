@@ -26,6 +26,7 @@ namespace Student.DataAcces.Dao
 
         public int AddAlumno(Alumno alumno)
         {
+            log.Debug("Haciendo insert");
             try
             {
                 var sql = "INSERT INTO dbo.Alumnos (Guid, Nombre, Apellidos, Dni, Registro, Nacimiento, Edad) VALUES (@Guid, @Nombre, @Apellidos, @Dni, @Registro, @Nacimiento, @Edad)";
@@ -36,12 +37,11 @@ namespace Student.DataAcces.Dao
                     {
                         // Importante abrir la conexion antes de lanzar ningun comando
                         _conn.Open();
-
-                        _cmd.Parameters.AddWithValue("@Guid", alumno.Guid.ToString());
+                        _cmd.Parameters.AddWithValue("@Guid", Guid.NewGuid());
                         _cmd.Parameters.AddWithValue("@Nombre", alumno.Nombre.ToString());
                         _cmd.Parameters.AddWithValue("@Apellidos", alumno.Apellidos.ToString());
                         _cmd.Parameters.AddWithValue("@Dni", alumno.Dni.ToString());
-                        _cmd.Parameters.AddWithValue("@Registro", alumno.Registro.ToString());
+                        _cmd.Parameters.AddWithValue("@Registro", DateTime.Now);
                         _cmd.Parameters.AddWithValue("@Nacimiento", alumno.Nacimiento.ToString());
                         _cmd.Parameters.AddWithValue("@Edad", alumno.Edad.ToString());
 
@@ -70,6 +70,7 @@ namespace Student.DataAcces.Dao
 
         public Alumno GetOneR(int id)
         {
+            log.Debug("Haciendo select one");
             try
             {
                 var sql = "SELECT * FROM dbo.Alumnos WHERE Id = @Id";
@@ -146,9 +147,10 @@ namespace Student.DataAcces.Dao
 
         public List<Alumno> GetAllR()
         {
+            log.Debug("Haciendo Getall");
             try
             {
-                var sql = "SELECT * FROM dbo.Alumnos";
+                var sql = "EXEC dbo.getall";
 
                 using (SqlConnection _conn = new SqlConnection(connectionString))
                 {
@@ -164,10 +166,10 @@ namespace Student.DataAcces.Dao
                             {
                                 
                                 while (oReader.Read())
-                            {
+                                { 
                                     Alumno alumno = new Alumno(
                                         Convert.ToInt32(oReader["Id"]),
-                                        new Guid(oReader["Guid"].ToString()),
+                                        Guid.Parse(oReader["Guid"].ToString()),
                                         oReader["Nombre"].ToString(),
                                         oReader["Apellidos"].ToString(),
                                         oReader["Dni"].ToString(),
@@ -217,8 +219,8 @@ namespace Student.DataAcces.Dao
                         _cmd.Parameters.AddWithValue("@Edad", alumno.Edad.ToString());
                         _cmd.Parameters.AddWithValue("@Id", alumno.Id);
 
-                        //_cmd.ExecuteNonQuery();
-                        _conn.Close();
+                        _cmd.ExecuteNonQuery();
+                        _cmd.Parameters.Clear();
 
                         return true;
                     }
