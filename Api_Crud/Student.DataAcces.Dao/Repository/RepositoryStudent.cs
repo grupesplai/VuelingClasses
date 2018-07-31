@@ -73,7 +73,7 @@ namespace Student.DataAcces.Dao
             log.Debug("Haciendo select one");
             try
             {
-                var sql = "SELECT * FROM dbo.Alumnos WHERE Id = @Id";
+                var sql = "EXEC dbo.getone @Id =@IdSelected";
 
                 using (SqlConnection _conn = new SqlConnection(connectionString))
                 {
@@ -81,7 +81,7 @@ namespace Student.DataAcces.Dao
                     {
                         Alumno alumno = new Alumno();
                         _conn.Open();
-                        _cmd.Parameters.AddWithValue("@Id",id);
+                        _cmd.Parameters.AddWithValue("@IdSelected", id);
 
                         using (SqlDataReader oReader = _cmd.ExecuteReader())
                         {
