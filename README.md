@@ -1,4 +1,7 @@
-# VuelingClasses
+# VuelingClasses, ejercicios y aplicaciones de prueba
+
+
+### Script para creación de variable de entorno(Proyecto de VuelingClases)
 Para  que funcione el script para este proyecto que te permite crear la variable de entorno, si no esta creada es siguiendo los siguientes pasos:
 - Ejecutar PowerShell como administrador.
 - Desde powershel colocarse ir a la carpeta donde se ha guardado el archivo .ps1, y ejecutar el siguiente comando: set-executionpolicy unrestricted
