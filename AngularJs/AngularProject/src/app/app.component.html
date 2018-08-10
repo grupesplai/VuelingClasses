@@ -1,0 +1,25 @@
+
+<body>
+  <header id="site-header">
+    <div class="container">
+      <nav class="site-nav">
+        <div>
+          <a [routerLink]="['home-page']">Home</a>
+          <a [routerLink]="['calculater']">Calculator</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div id="site-main" class="container">
+
+    <router-outlet></router-outlet>
+  </div>
+  <footer id="site-footer">
+
+    <div class="container">
+      &copy; Harry. Calculator 2018
+    </div>
+  </footer>
+
+</body>
+
